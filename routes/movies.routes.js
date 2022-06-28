@@ -23,4 +23,14 @@ router.post('/movies/create', (req, res, next) => {
       })
       .catch((err) => console.log(`Error while creating a new movie: ${err}`));
 })
+
+// ****************************************************************************************
+// GET route to display all movies from the DB
+// ****************************************************************************************
+
+router.get("/movies", (req, res) => {
+    Movie.find() // <-- .find() method gives us always an ARRAY back
+      .then((moviesFromDB) => res.render("movies/movies.hbs", { movies: moviesFromDB }))
+      .catch((err) => console.log(`Error while getting movies from the DB: ${err}`));
+  });
 module.exports = router;

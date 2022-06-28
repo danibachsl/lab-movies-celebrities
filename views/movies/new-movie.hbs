@@ -1,24 +1,25 @@
-
-<h2>Choose a new movie</h2>
+<br><h2>Create a new movie</h2><br>
 
 <form action="/movies/create" method="POST">
-    <label for="nombre">Name:</label>
-    <input id="name" name="name" type="text"></input>
+  <label> Title:
+    <input type="text" name="title" />
+  </label>
+  <br>
 
-    <label for="url">Occupation:</label>
-    <input id="occupation" name="occupation" type="text"></input>
+  <label> Genre:
+    <textarea type="text" name="genre"> </textarea>
+  </label>
+  <br>
 
-    <label for="url">Catch Phrase:</label>
-    <input id="catchPhrase" name="catchPhrase" type="text"></input>
+  <label for="author-select"> Cast:
+    <select name="cast">
+      <option disable selected value=""></option>
+      {{#each dbMovies}}
+        <option value="{{this.cast}}"> {{this.celebrity}} </option>
+      {{/each}}
+    </select>
+  </label>
+  <br>
 
-    <label for="movies">Choose a movie:</label>
-
-    <select name="movies" id="movies" multiple>
-    <option value="volvo">Volvo</option>
-    <option value="saab">Saab</option>
-    <option value="opel">Opel</option>
-    <option value="audi">Audi</option>
-</select>
-    
-    <button type="submit"> Add Movie </button>
+  <button type="submit"> Create a movie </button>
 </form>
