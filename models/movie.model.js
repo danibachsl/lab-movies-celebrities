@@ -1,6 +1,6 @@
-// Add your code here
+
 const mongoose = require("mongoose");
-const Movie = require("./Celebrity.model");
+
 
 // aqui creamos el Schema
 const movieSchema = new mongoose.Schema({
