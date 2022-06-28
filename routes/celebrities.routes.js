@@ -22,4 +22,12 @@ router.post('/celebrities/create', (req, res, next) => {
     })
 });
 
+router.get('/celebrities', (req, res, next) => {
+    Celebrity.find()
+    .then((response) => {
+        res.render('celebrities/celebrities.hbs', {response})
+    })
+    .catch((e) => {next(e)})
+})
+
 module.exports = router;
