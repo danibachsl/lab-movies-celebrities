@@ -10,11 +10,12 @@ router.get('/movies/create', (req, res) => {
 
 router.post('/movies/create', (req, res, next) => {
     const { movie } = req.body;
+    
     Movie.findOne({ movie })
       .then((movieFromDB) => {
         if (!movieFromDB) {
           // prettier-ignore
-          Movie.create({ movie })
+          Movie.create({ title:title, genre:genre, plot:plot, cast:cast })
           .then(() => res.redirect('/movies/create'));
         } else {
           res.render("/movies/create", { message: "It seems the movie already exists. ☀️" });
