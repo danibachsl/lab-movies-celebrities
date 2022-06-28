@@ -11,7 +11,7 @@ router.get('/celebrities/create', (req, res, next) => {
 router.post('/celebrities/create', (req, res, next) => {
     const name = req.body.name;
     const occupation = req.body.occupation;
-    const catchPhrase = req.body.catchPhrase:
+    const catchPhrase = req.body.catchPhrase;
 
     Celebrity.create({name:name, occupation:occupation, catchPhrase:catchPhrase})
     .then(() => {
