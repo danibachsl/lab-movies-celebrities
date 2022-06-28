@@ -1,7 +1,7 @@
-const Celebrity = require("../models/Celebrity.model");
 
 // starter code in both routes/celebrities.routes.js and routes/movies.routes.js
 const router = require("express").Router();
+const Celebrity = require("../models/Celebrity.model");
 
 // all your routes here
 
@@ -22,12 +22,14 @@ router.post('/celebrities/create', (req, res, next) => {
     })
 });
 
-router.get('/celebrities', (req, res, next) => {
+router.get('/celebrities', (req, res) => {
     Celebrity.find()
     .then((response) => {
         res.render('celebrities/celebrities.hbs', {response})
     })
-    .catch((e) => {next(e)})
+    .catch((err) => {
+        console.log(err);
+    })
 })
 
 module.exports = router;
