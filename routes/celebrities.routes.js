@@ -23,13 +23,14 @@ router.post('/celebrities/create', (req, res, next) => {
 });
 
 router.get('/celebrities', (req, res) => {
-    Celebrity.find()
-    .then((response) => {
-        res.render('celebrities/celebrities.hbs', {response})
-    })
-    .catch((err) => {
-        console.log(err);
-    })
+    Celebrity
+        .find()
+        .then((response) => {
+            res.render('celebrities/celebrities.hbs', {response})
+        })
+        .catch((err) => {
+            console.log(err);
+        })
 })
 
 module.exports = router;
