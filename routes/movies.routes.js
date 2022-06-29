@@ -10,7 +10,7 @@ router.get('/movies/create', (req, res) => {
 
 router.post('/movies/create', (req, res, next) => {
     const { movie } = req.body;
-    
+
     Movie.findOne({ movie })
       .then((movieFromDB) => {
         if (!movieFromDB) {
@@ -33,5 +33,7 @@ router.get("/movies", (req, res) => {
     Movie.find() // <-- .find() method gives us always an ARRAY back
       .then((moviesFromDB) => res.render("movies/movies.hbs", { movies: moviesFromDB }))
       .catch((err) => console.log(`Error while getting movies from the DB: ${err}`));
-  });
+});
+
+
 module.exports = router;

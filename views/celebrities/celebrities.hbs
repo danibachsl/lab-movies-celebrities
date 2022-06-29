@@ -1,7 +1,13 @@
 {{!-- const celebrities = ["Leonardo di Caprio", "Tom Cruise", "Denzel Washington", "Tom Hanks"]; --}}
 
-<br><h2>All celebrities</h2><br>
+<h2>Celebrities 🌟</h2>
 
 {{#each response}}
-    {{this.name}}
+
+<h5>{{name}}</h5>
+<p>{{occupation}}</p>
+<p>{{catchPhrase}}</p>
+
 {{/each}}
+
+<a href="/">Back home</a>
