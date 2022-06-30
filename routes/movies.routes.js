@@ -2,7 +2,9 @@
 const router = require("express").Router();
 const Movie = require("../models/movie.model");
 
-// all your routes here
+// ****************************************************************************************
+// **********************         ALL ROUTES BELOW       **********************************
+// ****************************************************************************************
 
 router.get('/movies/create', (req, res) => {
     res.render('movies/new-movie.hbs')
