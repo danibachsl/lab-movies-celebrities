@@ -46,5 +46,14 @@ router.get("/movies", (req, res) => {
       .catch((err) => console.log(`Error while getting movies from the DB: ${err}`));
 });
 
+router.get("/movies/:id", (req, res) => {
+    Movie
+        .findOne({ title })
+        .populate('cast')
+        .then((movieFromDB) => {
+            res.send('movies/movies');
+        })
+        .catch((err) => console.log(`Error while creating a new movie: ${err}`));
+})
 
 module.exports = router;
