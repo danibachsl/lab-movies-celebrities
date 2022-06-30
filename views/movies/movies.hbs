@@ -1,6 +1,7 @@
 
 <br><h2>All movies</h2><br>
-
-{{#each response}}
-    {{movies}}
-{{/each}}
+<ul>
+    {{#each moviesFromDB}}
+        <li>{{this.title}}</li>
+    {{/each}}
+</ul>

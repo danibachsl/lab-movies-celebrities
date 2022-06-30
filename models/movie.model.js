@@ -13,10 +13,7 @@ const movieSchema = new mongoose.Schema({
     plot: {
         type: String
     },
-    cast: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "celebrity",
-    }]
+    cast: [{ type: mongoose.Schema.Types.ObjectId, ref: "celebrity" }]
 })
 
 // crear el Model
