@@ -46,14 +46,18 @@ router.get("/movies", (req, res) => {
       .catch((err) => console.log(`Error while getting movies from the DB: ${err}`));
 });
 
+
 router.get("/movies/:id", (req, res) => {
+    const id = req.params._id;
+
     Movie
-        .findOne({ title })
+        .findOne({ id })
         .populate('cast')
         .then((movieFromDB) => {
-            res.send('movies/movies');
+            res.render('movies/movie-details.hbs', { movieFromDB });
         })
-        .catch((err) => console.log(`Error while creating a new movie: ${err}`));
+        .catch((err) => console.log(`Error while accessing movie details: ${err}`));
 })
+
 
 module.exports = router;
